@@ -1,0 +1,23 @@
+{
+  "name": "ETL-Pipeline",
+  "properties": {
+    "activities": [
+      {
+        "name": "ExtractData",
+        "type": "Copy",
+        "inputs": [{ "referenceName": "SourceDataset", "type": "DatasetReference" }],
+        "outputs": [{ "referenceName": "StagingDataset", "type": "DatasetReference" }]
+      },
+      {
+        "name": "TransformData",
+        "type": "DatabricksNotebook",
+        "dependsOn": [{ "activity": "ExtractData", "dependencyConditions": ["Succeeded"] }]
+      },
+      {
+        "name": "LoadData",
+        "type": "Copy",
+        "dependsOn": [{ "activity": "TransformData", "dependencyConditions": ["Succeeded"] }]
+      }
+    ]
+  }
+}
