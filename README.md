@@ -23,3 +23,8 @@ This project demonstrates a basic ETL (Extract, Transform, Load) pipeline using 
 - Python 3.x
 - Azure CLI
 - Required Python packages (`pip install -r requirements.txt`)
+
+## Personal Project
+1. The Project built using 
+learning available for DP 203 exam by Piotr tylor,youtube, poland
+2. Technologies are of Azure focus trial period.
